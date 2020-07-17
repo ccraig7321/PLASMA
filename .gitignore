@@ -1,0 +1,6 @@
+.env
+node_modules
+.eslintignore
+.eslintrc.json
+package-lock.json
+.DS_Store
