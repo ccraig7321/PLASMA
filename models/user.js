@@ -18,5 +18,12 @@ module.exports = function (sequelize, DataTypes) {
 
     // TODO? // Need hook to automatically hash password before User is created
 
+    // Associating User with Playlists
+    User.associate = function(models) {
+        User.hasMany(models.Playlist, {
+            onDelete: "cascade"
+        });
+    };
+
     return User;
 };
