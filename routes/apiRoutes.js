@@ -15,6 +15,16 @@ module.exports = function(app) {
   });
 
   // GET route for all playlists from specific user
+  app.get("/api/playlists/user/:id", function(req, res) {
+    db.Playlist.findAll({
+      where: {
+        UserId: req.params.id
+      }
+    }).then(function(playlistsData) {
+      res.json(playlistsData);
+    });
+  });
+
   // GET route for all songs from specific playlist
   // POST route for create new playlist
   // POST route to create new playlistSong
