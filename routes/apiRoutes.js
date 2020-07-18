@@ -1,24 +1,15 @@
+// Requiring models and passport
 var db = require("../models");
+// var passport = require("../config/passport");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
-  });
-
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
+  // TODO? // Passport authentication middleware and login POST route
+  // Signup POST route to create new user
+  // Logout GET Route
+  // GET route for all users
+  // GET route for all playlists from specific user
+  // GET route for all songs from specific playlist
+  // POST route for create new playlist
+  // POST route to create new playlistSong
+  // DELETE route to delete playlistSong
 };
