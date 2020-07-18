@@ -26,6 +26,30 @@ module.exports = function(app) {
   });
 
   // GET route for all songs from specific playlist
+  app.get("/api/playlistSongs/playlist/:id", function(req, res) {
+    db.PlaylistSong.findAll({
+      where: {
+        playlistId: req.params.id
+      },
+      include: [
+        {
+          model: db.Song
+          // TODO? // Figure out how to use nested includes
+          // include: [
+          //   {
+          //     model: db.Artist,
+          //     where: {
+          //       artistId: 1
+          //     }
+          //   }
+          // ]
+        }
+      ]
+    }).then(function(playlistSongsData) {
+      res.json(playlistSongsData);
+    });
+  });
+
   // POST route for create new playlist
   // POST route to create new playlistSong
   // DELETE route to delete playlistSong
