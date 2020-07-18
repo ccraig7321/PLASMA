@@ -15,5 +15,13 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
+  Playlist.associate = function(models) {
+    Playlist.hasMany(models.PlaylistSong, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return Playlist;
 };
