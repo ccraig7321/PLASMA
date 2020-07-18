@@ -51,6 +51,12 @@ module.exports = function(app) {
   });
 
   // POST route for create new playlist
+  app.post("/api/playlists", function(req, res) {
+    db.Playlist.create(req.body).then(function(playlist) {
+      res.json(playlist);
+    });
+  });
+
   // POST route to create new playlistSong
   // DELETE route to delete playlistSong
 };
