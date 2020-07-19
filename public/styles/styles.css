@@ -1,3 +1,98 @@
-.list-group-item {
-  line-height: 2.5;
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+html, body {
+    font-family: "Questrial", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+#loginTitle, #signupTitle {
+    font-weight: bold;
+}
+
+#loginButton, #signupButton  {
+    background-color: #B5EAD7;
+    margin-top: 20px;
+    font-family: "Questrial", sans-serif;
+}
+
+#hero {
+    background-color: #FCB280;
+}
+
+#homepageHero {
+    background-color: #B5EAD7;
+}
+
+#avatar img {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    margin-top: -70px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+}
+
+#avatarImage {
+    height: auto;
+    max-width: 100%;
+}
+
+.box {
+    margin-top: 5rem;
+}
+
+#password {
+    margin-bottom: 20px;
+}
+
+#linksText {
+    color: #C7CEEA;
+}
+
+#userIcon, #loginIcon {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.hero.has-background {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    left: 0px;
+    object-fit: cover;
+    object-position: center center;
+    width: 50%;
+    height: 100%;
+}
+
+#homepageTitle {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 20px;
+}
+  
+#homepageSubtitle {
+    font-size: 25px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#enterButton {
+    font-family: "Questrial", sans-serif;
+    font-size: 24px;
+    float: right;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: #FCB280;
+    color: white;
+    font-weight: bold;
 }
