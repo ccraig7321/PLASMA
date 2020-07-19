@@ -59,12 +59,12 @@ html, body {
     padding-left: 10px;
 }
 
-.hero.has-background {
+#homepageHeroBackground {
     position: relative;
     overflow: hidden;
 }
 
-.hero-background {
+#tropicalLeafStationery {
     position: absolute;
     left: 0px;
     object-fit: cover;
