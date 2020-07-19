@@ -6,12 +6,13 @@ html, body {
     font-weight: 300;
 }
 
-#loginTitle {
+#loginTitle, #signupTitle {
     font-weight: bold;
 }
 
-#loginButton {
+#loginButton, #signupButton  {
     background-color: #C7CEEA;
+    margin-top: 20px;
 }
 
 #hero {
@@ -44,10 +45,11 @@ html, body {
     margin-bottom: 20px;
 }
 
-#loginButton {
-    margin-top: 20px;
-}
-
 #linksText {
     color: #C7CEEA;
+}
+
+#userIcon {
+    padding-right: 10px;
+    padding-left: 10px;
 }
