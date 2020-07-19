@@ -11,12 +11,13 @@ html, body {
 }
 
 #loginButton, #signupButton  {
-    background-color: #C7CEEA;
+    background-color: #B5EAD7;
     margin-top: 20px;
+    font-family: "Questrial", sans-serif;
 }
 
 #hero {
-    background-color: #FF9AA2;
+    background-color: #FCB280;
 }
 
 #homepageHero {
@@ -53,7 +54,7 @@ html, body {
     color: #C7CEEA;
 }
 
-#userIcon {
+#userIcon, #loginIcon {
     padding-right: 10px;
     padding-left: 10px;
 }
@@ -77,7 +78,7 @@ html, body {
     font-weight: bold;
     text-align: right;
     padding-right: 20px;
-  }
+}
   
 #homepageSubtitle {
     font-size: 25px;
