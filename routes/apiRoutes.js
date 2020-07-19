@@ -59,21 +59,27 @@ module.exports = function(app) {
 
   // POST route to find or create new genre
   app.post("/api/genres", function(req, res) {
-    db.Genre.findOrCreate(req.body).then(function(genre) {
+    db.Genre.findOrCreate({
+      where: { name: req.body.name }
+    }).then(function(genre) {
       res.json(genre);
     });
   });
 
   // POST route to find or create new artist
   app.post("/api/artists", function(req, res) {
-    db.Artist.findOrCreate(req.body).then(function(artist) {
+    db.Artist.findOrCreate({
+      where: { name: req.body.name }
+    }).then(function(artist) {
       res.json(artist);
     });
   });
 
   // POST route to find or create new song
   app.post("/api/songs", function(req, res) {
-    db.Song.findOrCreate(req.body).then(function(song) {
+    db.Song.findOrCreate({
+      where: { title: req.body.title }
+    }).then(function(song) {
       res.json(song);
     });
   });
