@@ -1,3 +1,43 @@
-.list-group-item {
-  line-height: 2.5;
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+html, body {
+    font-family: "Questrial", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+h3.title {
+    font-weight: bold;
+}
+
+#loginButton {
+    background-color: #C7CEEA;
+}
+
+#hero {
+    background-color: #FF9AA2;
+}
+
+#avatar img {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    margin-top: -70px;
+}
+
+#avatarImage {
+    height: auto;
+    max-width: 100%;
+}
+
+.box {
+    margin-top: 5rem;
+}
+
+#linksText {
+    color: #C7CEEA;
 }
