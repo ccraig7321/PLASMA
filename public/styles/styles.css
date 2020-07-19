@@ -6,7 +6,7 @@ html, body {
     font-weight: 300;
 }
 
-h3.title {
+#loginTitle {
     font-weight: bold;
 }
 
@@ -27,6 +27,8 @@ h3.title {
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 50%;
     margin-top: -70px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
 }
 
 #avatarImage {
@@ -36,6 +38,14 @@ h3.title {
 
 .box {
     margin-top: 5rem;
+}
+
+#password {
+    margin-bottom: 20px;
+}
+
+#loginButton {
+    margin-top: 20px;
 }
 
 #linksText {
