@@ -1,5 +1,6 @@
 // Requiring models and passport
 var db = require("../models");
+const { QueryTypes } = require("sequelize");
 // var passport = require("../config/passport");
 
 module.exports = function(app) {
@@ -27,27 +28,17 @@ module.exports = function(app) {
 
   // GET route for all songs from specific playlist
   app.get("/api/playlistSongs/playlist/:id", function(req, res) {
-    db.PlaylistSong.findAll({
-      where: {
-        playlistId: req.params.id
-      },
-      include: [
+    db.sequelize
+      .query(
+        "SELECT Songs.title AS Song, Artists.name AS Artist, Genres.name AS Genre FROM PlaylistSongs JOIN Songs ON PlaylistSongs.SongId = Songs.id JOIN Artists ON Songs.ArtistId = Artists.id JOIN Genres ON Songs.GenreId = Genres.id WHERE PlaylistSongs.PlaylistId = ?",
         {
-          model: db.Song
-          // TODO? // Figure out how to use nested includes
-          // include: [
-          //   {
-          //     model: db.Artist,
-          //     where: {
-          //       artistId: 1
-          //     }
-          //   }
-          // ]
+          replacements: [req.params.id],
+          type: QueryTypes.SELECT
         }
-      ]
-    }).then(function(playlistSongsData) {
-      res.json(playlistSongsData);
-    });
+      )
+      .then(function(playlistSongsData) {
+        res.json(playlistSongsData);
+      });
   });
 
   // POST route for create new playlist
