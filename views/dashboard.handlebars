@@ -44,43 +44,111 @@
 <!-- Sidebar for PLASMA Dashboard -->
 
 <div class="columns is-variable is-0">
-<div>
-    <div class="menu-container px-1 has-background-white" id="sidebarMenuBackground">
-        <div class="menu-wrapper py-1">
-            <aside class="menu" id="sidebarMenu">
-                <p class="menu-label">
-                    General
-                </p>
-                <ul class="menu-list">
-                    <li><a><i class="fa fa-tachometer"></i>&nbsp;&nbsp;Dashboard</a></li>
-                    <li><a>Customers</a></li>
-                </ul>
-                <p class="menu-label">
-                    Administration
-                </p>
-                <ul class="menu-list">
-                    <li><a>Team Settings</a></li>
-                    <li>
-                    <a class="is-active has-background-primary">Manage Your Team</a>
-                    <ul>
-                        <li><a>Members</a></li>
-                        <li><a>Plugins</a></li>
-                        <li><a>Add a member</a></li>
+    <div>
+        <div class="menu-container px-1 has-background-white" id="sidebarMenuBackground">
+            <div class="menu-wrapper py-1">
+                <aside class="menu" id=sidebarMenu>
+                    <p class="menu-label">
+                        General
+                    </p>
+                    <ul class="menu-list">
+                        <li><a><i class="fa fa-tachometer"></i>&nbsp;&nbsp;Dashboard</a></li>
+                        <li><a></a></li>
                     </ul>
-                    </li>
-                    <li><a>Invitations</a></li>
-                    <li><a>Cloud Storage Environment Settings</a></li>
-                    <li><a>Authentication</a></li>
-                </ul>
-                <p class="menu-label">
-                    Transactions
-                </p>
-                <ul class="menu-list">
-                    <li><a>Payments</a></li>
-                    <li><a>Transfers</a></li>
-                    <li><a>Balance</a></li>
-                </ul>
+                    <p class="menu-label">
+                        My Playlists
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Songs for Long Summer Nights</a></li>
+                        <li><a>The Ultimate Indie Mix</a></li>
+                        <li><a>Get Up and Dance</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        My Library
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Songs</a></li>
+                        <li><a>Artists</a></li>
+                        <li><a>Genre</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                    </ul>
                 </aside>
+            </div>
         </div>
     </div>
+
+    <!-- Desktop for PLASMA Dashboard -->
+    <div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+        <div class="p-1">
+            <div class="columns is-variable is-desktop">
+                <div class="column">
+                    <h1 class="title">Dashboard<h1>
+                </div>
+            </div>
+            <div class="columns is-variable is-desktop">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-header" id="playlistCardHeader">
+                            <div class="card-header-title"><button class="button is-rounded" id="makePlaylistButton"><i
+                                        class="fa fa-plus" id="plusIcon" aria-hidden="true"></i>New Playlist</button>
+                            </div>
+                            <div class="card-content" id="playlistCardBody">
+                                <p class="is-size-3">
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-primary" type="text" placeholder="Search Song or Artist"
+                                            id="userSearchQuery">
+                                    </div>
+                                </div>
+                                <p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-variable is-desktop">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-header" id="songCardHeader">
+                            <div class="card-header-title">
+                                My Songs
+                            </div>
+                            <div class="card-content" id="songCardBody">
+                                <p class="is-size-3">Append Songs from Each Playlist (When Clicked) Here
+                                <p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-header" id="lyricsCardHeader">
+                            <div class="card-header-title">
+                                Lyrics
+                            </div>
+                            <div class="card-content" id="lyricsCardBody">
+                                <p class="is-size-3">Append Lyrics from Each Song (When Clicked) Here
+                                <p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 </div>
