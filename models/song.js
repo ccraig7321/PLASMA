@@ -8,10 +8,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
     }
   });
-
   Song.associate = function(models) {
     Song.belongsToMany(models.Playlist, {
-      through: PlaylistSongs
+      through: models.PlaylistSong
     });
   };
   return Song;
