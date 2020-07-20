@@ -10,7 +10,7 @@ $(document).ready(() => {
       username: usernameInput.val(),
       password: passwordInput.val()
     }).then(function(){
-      res.redirect(307, "/api/dashboard")
+      res.redirect(307, "/dashboard")
     })
     .catch(err => {
       res.status(401).json(err);
