@@ -6,7 +6,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-
   Playlist.associate = function(models) {
     Playlist.belongsTo(models.User, {
       foreignKey: {
@@ -14,12 +13,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   };
-
+  
   Playlist.associate = function(models) {
-    Playlist.hasMany(models.PlaylistSong, {
-      foreignKey: {
-        allowNull: false
-      }
+    Playlist.belongsToMany(models.Song, {
+      through: models.PlaylistSong
     });
   };
 

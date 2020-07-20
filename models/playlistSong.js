@@ -1,23 +1,25 @@
-module.exports = function(sequelize) {
-  var PlaylistSong = sequelize.define("PlaylistSong", {});
+const Song = require("./song.js");
+const Playlist = require("./playlist.js");
 
-  // Associate with Playlist
-  PlaylistSong.associate = function(models) {
-    PlaylistSong.belongsTo(models.Playlist, {
-      foreignKey: {
-        allowNull: false
+// PlaylistSong model
+module.exports = function(sequelize, DataTypes) {
+    var PlaylistSong = sequelize.define("PlaylistSong", {
+      PlaylistId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: Playlist,
+            key: 'id'
+        }
+      },
+      SongId: {
+          type: DataTypes.INTEGER,
+          references: {
+              model: Song,
+              key: 'id'
+          }
       }
     });
+    return PlaylistSong;
   };
-
-  // Associate with Song
-  PlaylistSong.associate = function(models) {
-    PlaylistSong.belongsTo(models.Song, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-
-  return PlaylistSong;
-};
+  

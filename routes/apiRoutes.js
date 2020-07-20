@@ -1,6 +1,8 @@
 // Requiring models and passport
 var db = require("../models");
 var passport = require("../config/passport");
+const { QueryTypes } = require("sequelize");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
   // TODO? // Passport authentication middleware and login POST route
@@ -18,7 +20,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(() => {
-        res.redirect(307, "/api/login");
+        res.status(200).end();
       })
       .catch(err => {
         res.status(401).json(err);
@@ -51,27 +53,17 @@ module.exports = function(app) {
 
   // GET route for all songs from specific playlist
   app.get("/api/playlistSongs/playlist/:id", function(req, res) {
-    db.PlaylistSong.findAll({
-      where: {
-        playlistId: req.params.id
-      },
-      include: [
+    db.sequelize
+      .query(
+        "SELECT Songs.title AS Song, Artists.name AS Artist, Genres.name AS Genre FROM PlaylistSongs JOIN Songs ON PlaylistSongs.SongId = Songs.id JOIN Artists ON Songs.ArtistId = Artists.id JOIN Genres ON Songs.GenreId = Genres.id WHERE PlaylistSongs.PlaylistId = ?",
         {
-          model: db.Song
-          // TODO? // Figure out how to use nested includes
-          // include: [
-          //   {
-          //     model: db.Artist,
-          //     where: {
-          //       artistId: 1
-          //     }
-          //   }
-          // ]
+          replacements: [req.params.id],
+          type: QueryTypes.SELECT
         }
-      ]
-    }).then(function(playlistSongsData) {
-      res.json(playlistSongsData);
-    });
+      )
+      .then(function(playlistSongsData) {
+        res.json(playlistSongsData);
+      });
   });
 
   // POST route for create new playlist
@@ -81,23 +73,11 @@ module.exports = function(app) {
     });
   });
 
-  // POST route to find or create new genre
-  app.post("/api/genres", function(req, res) {
-    db.Genre.findOrCreate(req.body).then(function(genre) {
-      res.json(genre);
-    });
-  });
-
-  // POST route to find or create new artist
-  app.post("/api/artists", function(req, res) {
-    db.Artist.findOrCreate(req.body).then(function(artist) {
-      res.json(artist);
-    });
-  });
-
   // POST route to find or create new song
   app.post("/api/songs", function(req, res) {
-    db.Song.findOrCreate(req.body).then(function(song) {
+    db.Song.findOrCreate({
+      where: { title: req.body.title }
+    }).then(function(song) {
       res.json(song);
     });
   });

@@ -4,24 +4,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    artistName: {
+      type: DataTypes.STRING,
+    }
   });
   Song.associate = function(models) {
-    Song.belongsTo(models.Genre, {
-      foreignKey: {
-        allowNull: false,
-      },
-    });
-  };
-  Song.associate = function(models) {
-    Song.belongsTo(models.Artist, {
-      foreignKey: {
-        allowNull: false,
-      },
-    });
-  };
-  Song.associate = function(models) {
-    Song.hasMany(models.PlaylistSong, {
-      onDelete: 'cascade',
+    Song.belongsToMany(models.Playlist, {
+      through: models.PlaylistSong
     });
   };
   return Song;
