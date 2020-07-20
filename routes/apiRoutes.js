@@ -1,11 +1,35 @@
 // Requiring models and passport
 var db = require("../models");
-// var passport = require("../config/passport");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
   // TODO? // Passport authentication middleware and login POST route
+  app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    // Sending back a password, even a hashed password, isn't a good idea
+    res.json({
+      username: req.user.username,
+      id: req.user.id
+    });
+  });
   // Signup POST route to create new user
+  app.post("/api/signup", (req, res) => {
+    db.User.create({
+      username: req.body.username,
+      password: req.body.password
+    })
+      .then(() => {
+        res.redirect(307, "/api/login");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
   // Logout GET Route
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
 
   // GET route for all users
   app.get("/api/users", function(req, res) {
