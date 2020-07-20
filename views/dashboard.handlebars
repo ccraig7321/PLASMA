@@ -1,4 +1,4 @@
-<!-- Navbar for PLASMA Dashboard -->
+<!-- Navbar for Dashboard -->
 <nav class="navbar is-fixed-top box-shadow-y" id="dashboardNavbar">
     <div class="navbar-brand">
         <a href="#" class="navbar-burger toggler">
@@ -15,7 +15,7 @@
         </a>
     </div>
 
-    <div class="navbar-menu has-background-white">
+    <div class="navbar-menu">
         <div class="navbar-start">
             <a href="#" class="navbar-item" id="homeText">
                 <i class="fa fa-music" id="homeDashboardIcon"></i>Home
@@ -42,12 +42,11 @@
 </nav>
 
 <!-- Sidebar for PLASMA Dashboard -->
-
 <div class="columns is-variable is-0">
     <div>
         <div class="menu-container px-1 has-background-white" id="sidebarMenuBackground">
             <div class="menu-wrapper py-1">
-                <aside class="menu" id=sidebarMenu>
+                <aside class="menu" id="sidebarMenu">
                     <p class="menu-label">
                         General
                     </p>
@@ -88,67 +87,97 @@
         </div>
     </div>
 
-    <!-- Desktop for PLASMA Dashboard -->
-    <div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
-        <div class="p-1">
-            <div class="columns is-variable is-desktop">
-                <div class="column">
-                    <h1 class="title">Dashboard<h1>
-                </div>
+<!-- Desktop for PLASMA Dashboard -->
+<div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+    <div class="p-1">
+        <div class="columns is-variable is-desktop">
+            <div class="column">
+                <h1 class="title">Dashboard<h1>
             </div>
-            <div class="columns is-variable is-desktop">
-                <div class="column">
-                    <div class="card">
-                        <div class="card-header" id="playlistCardHeader">
-                            <div class="card-header-title"><button class="button is-rounded" id="makePlaylistButton"><i
-                                        class="fa fa-plus" id="plusIcon" aria-hidden="true"></i>New Playlist</button>
-                            </div>
-                            <div class="card-content" id="playlistCardBody">
-                                <p class="is-size-3">
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input is-primary" type="text" placeholder="Search Song or Artist"
-                                            id="userSearchQuery">
-                                    </div>
+        </div>
+        <div class="columns is-variable is-desktop">
+            <div class="column">
+                <div class="card">
+                    <div class="card-header" id="playlistCardHeader">
+                        <div class="card-header-title"><button class="button is-rounded" id="makePlaylistButton"><i
+                                    class="fa fa-plus" id="plusIcon" aria-hidden="true"></i>New Playlist</button>
+                        </div>
+                        <div class="card-content" id="playlistCardBody">
+                            <p class="is-size-3">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-primary" type="text" placeholder="Search Song or Artist"
+                                        id="userSearchQuery">
                                 </div>
-                                <p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="columns is-variable is-desktop">
-                <div class="column">
-                    <div class="card">
-                        <div class="card-header" id="songCardHeader">
-                            <div class="card-header-title">
-                                My Songs
-                            </div>
-                            <div class="card-content" id="songCardBody">
-                                <p class="is-size-3">Append Songs from Each Playlist (When Clicked) Here
-                                <p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column">
-                    <div class="card">
-                        <div class="card-header" id="lyricsCardHeader">
-                            <div class="card-header-title">
-                                Lyrics
-                            </div>
-                            <div class="card-content" id="lyricsCardBody">
-                                <p class="is-size-3">Append Lyrics from Each Song (When Clicked) Here
-                                <p>
-                            </div>
+                            <p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+
+        <div class="columns is-variable">
+            <div class="column is-4-desktop is-6-tablet">
+                <article class="message is-info">
+                    <div class="message-header" id="songCardHeader">
+                        <p>Songs</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body" id="songCardBody">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <strong>Pellentesque risus mi</strong>, tempus quis placerat
+                        ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                        fringilla. Nullam gravida purus diam, et dictum
+                        <a>felis venenatis</a> efficitur. Aenean ac
+                        <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
+                        et sollicitudin porttitor, tortor urna tempor ligula, id
+                        porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                        eget, facilisis sodales sem.
+                    </div>
+                </article>
+            </div>
+
+            <div class="column is-4-desktop is-6-tablet">
+                <article class="message is-success">
+                    <div class="message-header" id="artistCardHeader">
+                        <p>Artist</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body" id="artistCardBody">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <strong>Pellentesque risus mi</strong>, tempus quis placerat
+                        ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                        fringilla. Nullam gravida purus diam, et dictum
+                        <a>felis venenatis</a> efficitur. Aenean ac
+                        <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
+                        et sollicitudin porttitor, tortor urna tempor ligula, id
+                        porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                        eget, facilisis sodales sem.
+                    </div>
+                </article>
+            </div>
+
+            <div class="column is-4-desktop is-6-tablet">
+                <article class="message is-success">
+                    <div class="message-header" id="lyricsCardHeader">
+                        <p>Lyrics</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body" id="lyricsCardBody">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <strong>Pellentesque risus mi</strong>, tempus quis placerat
+                        ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                        fringilla. Nullam gravida purus diam, et dictum
+                        <a>felis venenatis</a> efficitur. Aenean ac
+                        <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
+                        et sollicitudin porttitor, tortor urna tempor ligula, id
+                        porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                        eget, facilisis sodales sem.
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
-</div>
 </div>
