@@ -2,7 +2,7 @@
 
 html, body {
     font-family: "Questrial", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
 }
 
@@ -22,7 +22,7 @@ html, body {
     background-color: #FCB280;
     font-size: 20px;
     color: white;
-    margin-left: 70px;
+    margin-left: 175px;
     padding: 30px;
 }
 
@@ -36,6 +36,21 @@ html, body {
 
 #homepageHero {
     background-color: #B5EAD7;
+}
+
+#errorHero {
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    left: 0px;
+}
+
+#errorText {
+    position: fixed;
+    z-index: 1;
 }
 
 #avatar img {
@@ -82,9 +97,13 @@ html, body {
     align-items: center;
 }
 
-#homepageHeroBackground {
+#homepageHeroBackground, #errorHeroBackground {
     position: relative;
     overflow: hidden;
+}
+
+#errorHeroBackground {
+    z-index: -1;
 }
 
 #tropicalLeafStationery {
@@ -107,6 +126,21 @@ html, body {
     font-size: 25px;
     text-align: right;
     padding-right: 20px;
+}
+
+#errorTitle {
+    font-size: 60px;
+    color: black;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+}
+
+#errorSubtitle {
+    font-size: 25px;
+    color: black;
+    text-align: left;
+    padding-left: 20px;
 }
 
 #enterButton {
@@ -154,29 +188,45 @@ html, body {
     background-color: #B5EAD7;
 }
 
-#userSearchQuery {
-    width: 600px;
+#userSongSearchQuery {
+    width: 300px;
     margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-#playlistCardBody, #songCardBody, #lyricsCardBody, #artistCardBody {
+#userArtistSearchQuery {
+    width: 300px;
+    margin-top: 10px;
+}
+
+#playlistCardBody, #songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody  {
     background-color: #FCBEBF;
 }
 
-#songCardBody, #lyricsCardBody, #artistCardBody {
-    color: white
+#playlistCardBody {
+    margin-left: 50px;
 }
 
-#playlistCardHeader, #lyricsCardHeader, #songCardHeader, #artistCardHeader {
+#songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody {
+    color: white;
+}
+
+#playlistCardHeader, #lyricsCardHeader, #songCardHeader, #artistCardHeader, #songSearchResultsCardHeader, #artistSearchResultsCardHeader {
     background-color: #B5EAD7;
 }
 
 input::placeholder {
     font-family: "Questrial", sans-serif;
+    text-align: center;
 }
 
 #sidebarMenuBackground {
     background-color: #FEF1E8;
+}
+
+#songSearchButton, #artistSearchButton {
+    margin-right: 20px;
+    background-color: #FCB280;
+    margin-top: 10px;
 }

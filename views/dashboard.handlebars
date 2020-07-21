@@ -95,89 +95,125 @@
                 <h1 class="title">Dashboard<h1>
             </div>
         </div>
-        <div class="columns is-variable is-desktop">
-            <div class="column">
-                <div class="card">
-                    <div class="card-header" id="playlistCardHeader">
-                        <div class="card-header-title"><button class="button is-rounded" id="makePlaylistButton"><i
-                                    class="fa fa-plus" id="plusIcon" aria-hidden="true"></i>New Playlist</button>
-                        </div>
-                        <div class="card-content" id="playlistCardBody">
-                            <p class="is-size-3">
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input is-primary" type="text" placeholder="Search Song or Artist"
-                                        id="userSearchQuery">
+    </div>
+    <div class="columns is-variable is-desktop">
+        <div class="column">
+            <div class="card">
+                <div class="card-header" id="playlistCardHeader">
+                    <div class="card-header-title"><button class="button is-rounded" id="makePlaylistButton"><i
+                                class="fa fa-plus" id="plusIcon" aria-hidden="true"></i>New Playlist</button>
+                    </div>
+                    <div class="card-content" id="playlistCardBody">
+                        <p class="is-size-3">
+                        <div class="field">
+                            <div class="control"><button class="button is-rounded" id="songSearchButton"><i
+                                        class="fa fa-search" id="plusIcon" aria-hidden="true"></i></button>
+                                <input class="input is-primary" type="text" placeholder="Find Song by Title"
+                                    id="userSongSearchQuery">
+
+                                <div class="control"><button class="button is-rounded" id="artistSearchButton"><i
+                                            class="fa fa-search" id="plusIcon" aria-hidden="true"></i></button>
+                                    <input class="input is-primary" type="text" placeholder="Find Song by Artist"
+                                        id="userArtistSearchQuery">
                                 </div>
                             </div>
-                            <p>
                         </div>
+                        <p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="columns is-variable">
-            <div class="column is-4-desktop is-6-tablet">
-                <article class="message is-info">
-                    <div class="message-header" id="songCardHeader">
-                        <p>Songs</p>
-                        <button class="delete" aria-label="delete"></button>
-                    </div>
-                    <div class="message-body" id="songCardBody">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <strong>Pellentesque risus mi</strong>, tempus quis placerat
-                        ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
-                        fringilla. Nullam gravida purus diam, et dictum
-                        <a>felis venenatis</a> efficitur. Aenean ac
-                        <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
-                        et sollicitudin porttitor, tortor urna tempor ligula, id
-                        porttitor mi magna a neque. Donec dui urna, vehicula et sem
-                        eget, facilisis sodales sem.
-                    </div>
-                </article>
-            </div>
+    <div class="columns is-variable">
+        <div class="column is-4-desktop is-6-tablet">
+            <article class="message is-info">
+                <div class="message-header" id="songCardHeader">
+                    <p>Songs</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body" id="songCardBody">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <strong>Pellentesque risus mi</strong>, tempus quis placerat
+                    ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                    fringilla. Nullam gravida purus diam, et dictum
+                    <a>felis venenatis</a> efficitur. Aenean ac
+                    <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
+                    et sollicitudin porttitor, tortor urna tempor ligula, id
+                    porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                    eget, facilisis sodales sem.
+                </div>
+            </article>
+        </div>
 
-            <div class="column is-4-desktop is-6-tablet">
-                <article class="message is-success">
-                    <div class="message-header" id="artistCardHeader">
-                        <p>Artist</p>
-                        <button class="delete" aria-label="delete"></button>
-                    </div>
-                    <div class="message-body" id="artistCardBody">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <strong>Pellentesque risus mi</strong>, tempus quis placerat
-                        ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
-                        fringilla. Nullam gravida purus diam, et dictum
-                        <a>felis venenatis</a> efficitur. Aenean ac
-                        <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
-                        et sollicitudin porttitor, tortor urna tempor ligula, id
-                        porttitor mi magna a neque. Donec dui urna, vehicula et sem
-                        eget, facilisis sodales sem.
-                    </div>
-                </article>
-            </div>
+        <div class="column is-4-desktop is-6-tablet">
+            <article class="message is-success">
+                <div class="message-header" id="artistCardHeader">
+                    <p>Artist</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body" id="artistCardBody">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <strong>Pellentesque risus mi</strong>, tempus quis placerat
+                    ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                    fringilla. Nullam gravida purus diam, et dictum
+                    <a>felis venenatis</a> efficitur. Aenean ac
+                    <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
+                    et sollicitudin porttitor, tortor urna tempor ligula, id
+                    porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                    eget, facilisis sodales sem.
+                </div>
+            </article>
+        </div>
 
-            <div class="column is-4-desktop is-6-tablet">
-                <article class="message is-success">
-                    <div class="message-header" id="lyricsCardHeader">
-                        <p>Lyrics</p>
-                        <button class="delete" aria-label="delete"></button>
-                    </div>
-                    <div class="message-body" id="lyricsCardBody">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <strong>Pellentesque risus mi</strong>, tempus quis placerat
-                        ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
-                        fringilla. Nullam gravida purus diam, et dictum
-                        <a>felis venenatis</a> efficitur. Aenean ac
-                        <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
-                        et sollicitudin porttitor, tortor urna tempor ligula, id
-                        porttitor mi magna a neque. Donec dui urna, vehicula et sem
-                        eget, facilisis sodales sem.
-                    </div>
-                </article>
-            </div>
+        <div class="column is-4-desktop is-6-tablet">
+            <article class="message is-success">
+                <div class="message-header" id="lyricsCardHeader">
+                    <p>Lyrics</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body" id="lyricsCardBody">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <strong>Pellentesque risus mi</strong>, tempus quis placerat
+                    ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                    fringilla. Nullam gravida purus diam, et dictum
+                    <a>felis venenatis</a> efficitur. Aenean ac
+                    <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu
+                    et sollicitudin porttitor, tortor urna tempor ligula, id
+                    porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                    eget, facilisis sodales sem.
+                </div>
+            </article>
+        </div>
+    </div>
+
+
+    <div class="columns is-variable is-10-desktop is-offset-2-desktop">
+        <div class="column">
+            <article class="message is-success">
+                <div class="message-header" id="songSearchResultsCardHeader">
+                    <p>Search Results for Songs by Title</p>
+                    <button class="delete" aria-label="delete" id="songClearButton"></button>
+                </div>
+                <div class="message-body" id="songSearchResultsCardBody">
+
+                </div>
+            </article>
+        </div>
+
+        <div class="column">
+            <article class="message is-success">
+                <div class="message-header" id="artistSearchResultsCardHeader">
+                    <p>Search Results for Songs by Artist</p>
+                    <button class="delete" aria-label="delete" id="artistClearButton"></button>
+                </div>
+                <div class="message-body" id="artistSearchResultsCardBody">
+
+                </div>
+            </article>
         </div>
     </div>
 </div>
+
+<script src="js/dashboard.js" charset="utf-8"></script>
