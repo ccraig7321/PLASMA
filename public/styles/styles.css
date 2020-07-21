@@ -161,12 +161,12 @@ html, body {
     padding-bottom: 20px;
 }
 
-#playlistCardBody, #songCardBody, #lyricsCardBody, #artistCardBody {
+#playlistCardBody, #songCardBody, #lyricsCardBody, #artistCardBody, #searchButton {
     background-color: #FCBEBF;
 }
 
-#songCardBody, #lyricsCardBody, #artistCardBody {
-    color: white
+#songCardBody, #lyricsCardBody, #artistCardBody, #playlistCardBody {
+    color: white;
 }
 
 #playlistCardHeader, #lyricsCardHeader, #songCardHeader, #artistCardHeader {
