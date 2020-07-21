@@ -226,6 +226,12 @@ input::placeholder {
     background-color: #FEF1E8;
 }
 
+a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 #songSearchButton, #artistSearchButton {
     margin-right: 20px;
     background-color: #FCB280;
