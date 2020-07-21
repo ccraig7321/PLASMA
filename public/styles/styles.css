@@ -180,3 +180,9 @@ input::placeholder {
 #sidebarMenuBackground {
     background-color: #FEF1E8;
 }
+
+a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
