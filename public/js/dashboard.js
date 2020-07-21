@@ -165,3 +165,57 @@ function artistClear() {
 
 // The on "click" function that is associated with the "delete" button.
 $("#artistClearButton").on("click", artistClear);
+
+// Variables to set selected playlist
+let selectedPlaylistName = $(".playlistListItem:first").text();
+console.log(selectedPlaylistName);
+let selectedPlaylistId = $(".playlistListItem:first").data("id");
+console.log(selectedPlaylistId);
+// Event listener for new playlist button
+$("#makePlaylistButton").on("click", function () {
+    console.log("click!");
+    let playlistName = {
+        name: $("#newPlaylistName").val(),
+        UserId: 1
+    }
+    $.ajax("/api/playlists", {
+        type: "POST",
+        data: playlistName
+    }).then(function () {
+        console.log("created new playlist!");
+        location.reload();
+    });
+});
+// Event listener for playlist list item
+$(".playlistListItem").on("click", function () {
+    console.log("click!");
+    let playlistName = $(this).text();
+    let playlistId = $(this).data("id");
+    selectedPlaylistName = playlistName;
+    selectedPlaylistId = playlistId;
+    selectPlaylist(selectedPlaylistName, selectedPlaylistId);
+});
+// Function to select playlist
+const selectPlaylist = (name, id) => {
+    $("#selectedPlaylist").text(name);
+    $("#selectedPlaylist").attr("data-id", id);
+    renderPlaylistSongs(id);
+};
+// Function to show playlist songs
+const renderPlaylistSongs = (playlistId) => {
+    $("#playlistSongsList").empty();
+    $.ajax("/api/playlist/" + playlistId, {
+        type: "GET",
+        data: playlistId
+    }).then(function (data) {
+        console.log("displaying playlist...");
+        console.log(data);
+        data.forEach(song => {
+            console.log(song.title);
+            let newListItem = $("<li>").text(song.title);
+            $("#playlistSongsList").append(newListItem);
+        });
+    });
+};
+// Call select playlist
+selectPlaylist(selectedPlaylistName, selectedPlaylistId);
