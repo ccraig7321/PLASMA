@@ -1,5 +1,6 @@
 $("#searchButton").on("click", function(event) {
     event.preventDefault();
+    clear();
     console.log("I was clicked!");
     searchTerm = $("#userSearchQuery").val();
     const queryURL = "https://deezerdevs-deezer.p.rapidapi.com/search/track?q=" + searchTerm;
@@ -59,7 +60,14 @@ $("#searchButton").on("click", function(event) {
 
         $songList.css({"margin": "10px"});
         $songList.css({"padding-bottom": "20px"});
-
     }
     });
     });
+
+    // Empties the list of songs from the previous searches.
+    function clear() {
+        $("#searchResultsCardBody").empty();
+    }
+
+    // The on "click" function that is associated with the "delete" button.
+    $("#clearButton").on("click", clear);
