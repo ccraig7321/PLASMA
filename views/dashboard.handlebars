@@ -18,7 +18,8 @@
     <div class="navbar-menu">
         <div class="navbar-start">
             <a href="#" class="navbar-item" id="homeText">
-                <i class="fa fa-music" id="homeDashboardIcon"></i>Home
+                {{!-- <i class="fa fa-music" id="homeDashboardIcon"></i> --}}
+                Home
             </a>
 
             <a href="#" class="navbar-item">Search</a>
@@ -100,14 +101,16 @@
         <div class="column">
             <div class="card">
                 <div class="card-header" id="playlistCardHeader">
-                    <div class="card-header-title"><button class="button is-rounded" id="makePlaylistButton"><i
-                                class="fa fa-plus" id="plusIcon" aria-hidden="true"></i>New Playlist</button>
+                    <div class="card-header-title"><button class="button is-rounded" id="makePlaylistButton">
+                        {{!-- <i class="fa fa-plus" id="plusIcon" aria-hidden="true"></i> --}}
+                                New Playlist</button>
                     </div>
                     <div class="card-content" id="playlistCardBody">
                         <p class="is-size-3">
                         <div class="field">
-                            <div class="control"><button class="button is-rounded" id="songSearchButton"><i
-                                        class="fa fa-search" id="plusIcon" aria-hidden="true"></i></button>
+                            <div class="control"><button class="button is-rounded" id="songSearchButton">
+                                {{!-- <i class="fa fa-search" id="plusIcon" aria-hidden="true"></i> --}}
+                                </button>
                                 <input class="input is-primary" type="text" placeholder="Find Song by Title"
                                     id="userSongSearchQuery">
 
