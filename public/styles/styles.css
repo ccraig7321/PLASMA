@@ -22,8 +22,13 @@ html, body {
     background-color: #FCB280;
     font-size: 20px;
     color: white;
-    margin-left: 175px;
+    margin-left: 50px;
     padding: 30px;
+}
+
+#newPlaylistName {
+    margin-left: 80px;
+    width: 250px;
 }
 
 #loginLine {
