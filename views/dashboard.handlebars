@@ -42,6 +42,7 @@
 </nav>
 
 <!-- Sidebar for PLASMA Dashboard -->
+
 <div class="columns is-variable is-0">
     <div>
         <div class="menu-container px-1 has-background-white" id="sidebarMenuBackground">
@@ -87,12 +88,13 @@
         </div>
     </div>
 
-<!-- Desktop for PLASMA Dashboard -->
-<div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
-    <div class="p-1">
-        <div class="columns is-variable is-desktop">
-            <div class="column">
-                <h1 class="title">Dashboard<h1>
+    <!-- Desktop for PLASMA Dashboard -->
+    <div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+        <div class="p-1">
+            <div class="columns is-variable is-desktop">
+                <div class="column">
+                    <h1 class="title">Dashboard<h1>
+                </div>
             </div>
         </div>
         <div class="columns is-variable is-desktop">
@@ -105,7 +107,8 @@
                         <div class="card-content" id="playlistCardBody">
                             <p class="is-size-3">
                             <div class="field">
-                                <div class="control">
+                                <div class="control"><button class="button is-rounded" id="searchButton"><i
+                                            class="fa fa-search" id="plusIcon" aria-hidden="true"></i></button>
                                     <input class="input is-primary" type="text" placeholder="Search Song or Artist"
                                         id="userSearchQuery">
                                 </div>
@@ -179,5 +182,18 @@
                 </article>
             </div>
         </div>
+
+        <div class="columns is-variable is-20-desktop is-offset-2-desktop">
+            <div class="column">
+                <article class="message is-success">
+                    <div class="message-header" id="searchResultsCardHeader">
+                        <p>Search Results</p>
+                        <button class="delete" aria-label="delete" id="clearButton"></button>
+                    </div>
+                    <div class="message-body" id="searchResultsCardBody">
+                    
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
-</div>
