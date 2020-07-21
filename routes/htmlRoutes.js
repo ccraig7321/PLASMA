@@ -20,7 +20,6 @@ module.exports = function(app) {
         UserId: userId
       }
     }).then(function(playlistsData) {
-      console.log(playlistsData);
       let hbsObject = {
         playlists: playlistsData.map(data => {
           return {

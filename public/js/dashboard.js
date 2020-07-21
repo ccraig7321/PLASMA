@@ -62,8 +62,9 @@ $("#songSearchButton").on("click", function (event) {
       addSongButton.text("Add Song");
       addSongButton.attr(
         "class",
-        "button is-rounded is-success is-small is-light"
+        "button is-rounded is-success is-small is-light addSongBtn"
       );
+      addSongButton.attr({"data-title": songTitle, "data-artist" : artist});
       addSongButton.css({ "margin-right": "10px", float: "right" });
       $songList.append(addSongButton);
 
@@ -144,8 +145,9 @@ $("#artistSearchButton").on("click", function (event) {
       addSongButton.text("Add Song");
       addSongButton.attr(
         "class",
-        "button is-rounded is-success is-small is-light"
+        "button is-rounded is-success is-small is-light addSongBtn"
       );
+      addSongButton.attr({"data-title": songTitle, "data-artist" : artist});
       addSongButton.css({ "margin-right": "10px", float: "right" });
       $songList.append(addSongButton);
 
@@ -211,11 +213,74 @@ const renderPlaylistSongs = (playlistId) => {
         console.log("displaying playlist...");
         console.log(data);
         data.forEach(song => {
-            console.log(song.title);
-            let newListItem = $("<li>").text(song.title);
+            console.log(song);
+            let newListItem = $("<li>").text(`${song.title} by ${song.artistName}`);
+            newListItem.attr({"data-title": song.title, "data-artist": song.artistName});
+            newListItem.addClass("playlistSongItem");
             $("#playlistSongsList").append(newListItem);
         });
     });
 };
 // Call select playlist
 selectPlaylist(selectedPlaylistName, selectedPlaylistId);
+
+// Event listener and function to add song
+$(document).on("click", ".addSongBtn", function() {
+    let newSong = {
+        title: $(this).data("title"),
+        artistName: $(this).data("artist")
+    }
+    // console.log("NEWSONG");
+    // console.log(newSong);
+    $.ajax("/api/songs", {
+        type: "POST",
+        data: newSong
+    }).then(function(songData) {
+        // console.log("SONG DATA");
+        // console.log(songData);
+        let newPlaylistSong = {
+            PlaylistId: selectedPlaylistId,
+            SongId: songData[0].id
+        }
+        console.log(newPlaylistSong);
+        $.ajax("/api/playlistSongs", {
+            type: "POST",
+            data: newPlaylistSong
+        }).then(function(playlistSong) {
+            console.log(playlistSong);
+            location.reload();
+        });
+    });
+});
+
+// Event listener for song name
+$(document).on("click", ".playlistSongItem", function() {
+    selectedSong = $(this).text();
+    console.log("CLICK");
+    console.log(selectedSong);
+    getLyrics(selectedSong);
+});
+
+let selectedSong = $("#playlistSongsList:first").text();
+
+// Lyric API
+const getLyrics = (song) => {
+    $("#lyricsCardBody").empty();
+
+    let queryURL = `https://canarado-lyrics.p.rapidapi.com/lyrics/${song}`;
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "canarado-lyrics.p.rapidapi.com",
+        "x-rapidapi-key": "bf8ea15776msh45d77821114c6f4p14588ejsn90d20668317d"
+      }
+    }).then(function(lyricData) {
+    //   console.log(lyricData);
+      // Set them to lyric section on dashboard
+      let lyricP = $("<p>").text(lyricData.content[0].lyrics);
+      $("#lyricsCardBody").append(lyricP);
+    });
+  };
+
+  getLyrics(selectedSong);

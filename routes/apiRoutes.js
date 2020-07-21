@@ -71,8 +71,10 @@ module.exports = function(app) {
 
   // POST route to find or create new song
   app.post("/api/songs", function(req, res) {
+    console.log("SONGreq.body");
+    console.log(req.body);
     db.Song.findOrCreate({
-      where: { title: req.body.title }
+      where: { title: req.body.title, artistName: req.body.artistName }
     }).then(function(song) {
       res.json(song);
     });
@@ -81,6 +83,7 @@ module.exports = function(app) {
   // POST route to create new playlistSong
   app.post("/api/playlistSongs", function(req, res) {
     db.PlaylistSong.create(req.body).then(function(playlistSong) {
+
       res.json(playlistSong);
     });
   });
