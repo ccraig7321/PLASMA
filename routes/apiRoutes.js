@@ -52,18 +52,14 @@ module.exports = function(app) {
   });
 
   // GET route for all songs from specific playlist
-  app.get("/api/playlistSongs/playlist/:id", function(req, res) {
-    db.sequelize
-      .query(
-        "SELECT Songs.title AS Song, Artists.name AS Artist, Genres.name AS Genre FROM PlaylistSongs JOIN Songs ON PlaylistSongs.SongId = Songs.id JOIN Artists ON Songs.ArtistId = Artists.id JOIN Genres ON Songs.GenreId = Genres.id WHERE PlaylistSongs.PlaylistId = ?",
-        {
-          replacements: [req.params.id],
-          type: QueryTypes.SELECT
-        }
-      )
-      .then(function(playlistSongsData) {
-        res.json(playlistSongsData);
-      });
+  app.get("/api/playlist/:id", function(req, res) {
+    db.sequelize.query("SELECT * FROM Songs JOIN PlaylistSongs ON Songs.id = PlaylistSongs.SongId WHERE PlaylistSongs.PlaylistId = ?", {
+      replacements: [req.params.id],
+      type: QueryTypes.SELECT
+      }
+    ).then(function(playlistSongsData) {
+      res.json(playlistSongsData);
+    });
   });
 
   // POST route for create new playlist
