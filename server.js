@@ -1,6 +1,9 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+const session = require("express-session");
+const passport = require("./config/passport");
+
 
 var db = require("./models");
 
@@ -21,6 +24,12 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
