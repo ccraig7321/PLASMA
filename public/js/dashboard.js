@@ -74,6 +74,7 @@ $("#songSearchButton").on("click", function (event) {
             $songList.css({ margin: "10px" });
             $songList.css({ "padding-bottom": "20px" });
         }
+        $("#userSongSearchQuery").val("");
     });
 });
 
@@ -157,6 +158,7 @@ $("#artistSearchButton").on("click", function (event) {
             $songList.css({ margin: "10px" });
             $songList.css({ "padding-bottom": "20px" });
         }
+        $("#userArtistSearchQuery").val("");
     });
 });
 
@@ -170,10 +172,10 @@ $("#artistClearButton").on("click", artistClear);
 
 // Variables to set selected playlist and song
 let selectedPlaylistName = $(".playlistListItem:first").text();
-console.log(selectedPlaylistName);
 let selectedPlaylistId = $(".playlistListItem:first").data("id");
-console.log(selectedPlaylistId);
 let selectedSong;
+let songIsSelected = false;
+
 // Event listener for new playlist button
 $("#makePlaylistButton").on("click", function () {
     console.log("click!");
@@ -191,15 +193,17 @@ $("#makePlaylistButton").on("click", function () {
         });
     }
 });
+
 // Event listener for playlist list item
 $(".playlistListItem").on("click", function () {
-    console.log("click!");
+    songIsSelected = false;
     let playlistName = $(this).text();
     let playlistId = $(this).data("id");
     selectedPlaylistName = playlistName;
     selectedPlaylistId = playlistId;
     selectPlaylist(selectedPlaylistName, selectedPlaylistId);
 });
+
 // Function to select playlist
 const selectPlaylist = (name, id) => {
     if ((name === undefined) || (id === undefined)) {
@@ -211,6 +215,7 @@ const selectPlaylist = (name, id) => {
         renderPlaylistSongs(id);
     }
 };
+
 // Function to show playlist songs
 const renderPlaylistSongs = (playlistId) => {
     $("#playlistSongsList").empty();
@@ -231,13 +236,15 @@ const renderPlaylistSongs = (playlistId) => {
                 newListItem.addClass("playlistSongItem");
                 $("#playlistSongsList").append(newListItem);
             });
-            selectedSong = $(".playlistSongItem:first").text();
+
+            if (!songIsSelected) {
+                selectedSong = $(".playlistSongItem:first").data("title") + $(".playlistSongItem:first").data("artist");
+            }
+
             getLyrics(selectedSong);
         }
     });
 };
-// Call select playlist
-selectPlaylist(selectedPlaylistName, selectedPlaylistId);
 
 // Event listener and function to add song
 $(document).on("click", ".addSongBtn", function () {
@@ -262,17 +269,20 @@ $(document).on("click", ".addSongBtn", function () {
             type: "POST",
             data: newPlaylistSong
         }).then(function (playlistSong) {
-            console.log(playlistSong);
-            location.reload();
+            // console.log(playlistSong);
+            let songTitleAndArtist = newSong.title + newSong.artistName;
+            selectedSong = songTitleAndArtist;
+            songIsSelected = true;
+            renderPlaylistSongs(selectedPlaylistId);
         });
     });
 });
 
 // Event listener for song name
 $(document).on("click", ".playlistSongItem", function () {
-    selectedSong = $(this).text();
-    console.log("CLICK");
-    console.log(selectedSong);
+    selectedSong = $(this).data("title") + $(this).data("artist");
+    // console.log(selectedSong);
+    songIsSelected = true;
     getLyrics(selectedSong);
 });
 
@@ -295,3 +305,6 @@ const getLyrics = (song) => {
         $("#lyricsCardBody").append(lyricP);
     });
 };
+
+// Call select playlist
+selectPlaylist(selectedPlaylistName, selectedPlaylistId);
