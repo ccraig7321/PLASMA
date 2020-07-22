@@ -48,135 +48,140 @@
                         <li data-id="{{this.id}}" class="playlistListItem">{{this.name}}</li>
                         {{/each}}
                     </ul>
+                    <p class="menu-label">
+                        Suggested Playlists
+                    </p>
+                    <ul class="menu-list" id="otherPlaylistsList">
+                    </ul>
                 </aside>
             </div>
         </div>
     </div>
 
-<!-- Desktop for PLASMA Dashboard -->
-<div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
-    <div class="p-1">
-        <div class="columns is-variable is-desktop">
-            <div class="column">
-                <h1 class="title" id="dashboardUserInfo">Welcome back, {{nameOfUser}}!<h1>
+    <!-- Desktop for PLASMA Dashboard -->
+    <div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+        <div class="p-1">
+            <div class="columns is-variable is-desktop">
+                <div class="column">
+                    <h1 class="title" id="dashboardUserInfo">Welcome back, {{nameOfUser}}!<h1>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="columns is-variable is-10-desktop is-offset-2-desktop">
+        <div class="columns is-variable is-10-desktop is-offset-2-desktop">
 
-        <div class="column is-6-desktop">
-            <article class="message is-success">
-                <div class="message-header" id="playlistCardHeader">
-                    <p>Make Playlist</p>
-                    <button class="delete" aria-label="delete"></button>
-                </div>
-                <div class="message-body" id="playlistCardBody">
-                    <div class="field">
-                        <div class="control">
-                            <button class="button is-rounded" id="makePlaylistButton">
-                                <i class="fas fa-plus" id="plusIcon"></i>
-                                New Playlist</button>
-                            <input class="input" type="text" placeholder="New Playlist Name" id="newPlaylistName">
-
-                        </div>
+            <div class="column is-6-desktop">
+                <article class="message is-success">
+                    <div class="message-header" id="playlistCardHeader">
+                        <p>Make Playlist</p>
+                        <button class="delete" aria-label="delete"></button>
                     </div>
-                </div>
-            </article>
-        </div>
+                    <div class="message-body" id="playlistCardBody">
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-rounded" id="makePlaylistButton">
+                                    <i class="fas fa-plus" id="plusIcon"></i>
+                                    New Playlist</button>
+                                <input class="input" type="text" placeholder="New Playlist Name" id="newPlaylistName">
 
-        <div class="column is-6-desktop">
-            <article class="message is-success">
-                <div class="message-header" id="searchBarsCardHeader">
-                    <p>Song Search Bars</p>
-                    <button class="delete" aria-label="delete" id="searchBarsClearButton"></button>
-                </div>
-                <div class="message-body" id="searchBarsCardBody">
-                    <div class="field">
-                        <div class="control"><button class="button is-rounded" id="songSearchButton">
-                                <i class="fas fa-search" id="searchIcon"></i>
-                            </button>
-                            <input class="input is-primary" type="text" placeholder="Search Song by Title"
-                                id="userSongSearchQuery">
-
-                            <div class="control"><button class="button is-rounded" id="artistSearchButton">
-                                    <i class="fas fa-search" id="searchIcon"></i>
-                                </button>
-                                <input class="input is-primary" type="text" placeholder="Search Song by Artist"
-                                    id="userArtistSearchQuery">
                             </div>
                         </div>
                     </div>
-                </div>
-            </article>
-        </div>
-    </div>
+                </article>
+            </div>
 
-    <div class="columns is-variable">
-        <div class="column is-4-desktop is-6-tablet">
-            <article class="message is-info">
-                <div class="message-header" id="songCardHeader">
-                    <p id="selectedPlaylist">Playlist Tracks</p>
-                    <button class="delete" aria-label="delete"></button>
-                </div>
-                <div class="message-body" id="songCardBody">
-                    <ul id="playlistSongsList">
+            <div class="column is-6-desktop">
+                <article class="message is-success">
+                    <div class="message-header" id="searchBarsCardHeader">
+                        <p>Song Search Bars</p>
+                        <button class="delete" aria-label="delete" id="searchBarsClearButton"></button>
+                    </div>
+                    <div class="message-body" id="searchBarsCardBody">
+                        <div class="field">
+                            <div class="control"><button class="button is-rounded" id="songSearchButton">
+                                    <i class="fas fa-search" id="searchIcon"></i>
+                                </button>
+                                <input class="input is-primary" type="text" placeholder="Search Song by Title"
+                                    id="userSongSearchQuery">
 
-                    </ul>
-                </div>
-            </article>
-        </div>
-
-        <div class="column is-4-desktop is-6-tablet">
-            <article class="message is-success">
-                <div class="message-header" id="artistCardHeader">
-                    <p>Artist/Album Information</p>
-                    <button class="delete" aria-label="delete"></button>
-                </div>
-                <div class="message-body" id="artistCardBody">
-                    <img id="myImage" src="" />
-                </div>
-            </article>
+                                <div class="control"><button class="button is-rounded" id="artistSearchButton">
+                                        <i class="fas fa-search" id="searchIcon"></i>
+                                    </button>
+                                    <input class="input is-primary" type="text" placeholder="Search Song by Artist"
+                                        id="userArtistSearchQuery">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
 
-        <div class="column is-4-desktop is-6-tablet">
-            <article class="message is-success">
-                <div class="message-header" id="songSearchResultsCardHeader">
-                    <p>Search Results for Songs by Title</p>
-                    <button class="delete" aria-label="delete" id="songClearButton"></button>
-                </div>
-                <div class="message-body" id="songSearchResultsCardBody">
+        <div class="columns is-variable">
+            <div class="column is-4-desktop is-6-tablet">
+                <article class="message is-info">
+                    <div class="message-header" id="songCardHeader">
+                        <p id="selectedPlaylist">Playlist Tracks</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body" id="songCardBody">
+                        <ul id="playlistSongsList">
 
-                </div>
-            </article>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <div class="column is-4-desktop is-6-tablet">
+                <article class="message is-success">
+                    <div class="message-header" id="artistCardHeader">
+                        <p>Artist/Album Information</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body" id="artistCardBody">
+                        <img id="myImage" src="" />
+                    </div>
+                </article>
+            </div>
+
+            <div class="column is-4-desktop is-6-tablet">
+                <article class="message is-success">
+                    <div class="message-header" id="songSearchResultsCardHeader">
+                        <p>Search Results for Songs by Title</p>
+                        <button class="delete" aria-label="delete" id="songClearButton"></button>
+                    </div>
+                    <div class="message-body" id="songSearchResultsCardBody">
+
+                    </div>
+                </article>
+            </div>
         </div>
-    </div>
 
 
-    <div class="columns is-variable is-10-desktop is-offset-2-desktop">
+        <div class="columns is-variable is-10-desktop is-offset-2-desktop">
 
-        <div class="column is-8-desktop">
-            <article class="message is-success">
-                <div class="message-header" id="lyricsCardHeader">
-                    <p>Song Lyrics</p>
-                    <button class="delete" aria-label="delete"></button>
-                </div>
-                <div class="message-body" id="lyricsCardBody">
-                </div>
-            </article>
+            <div class="column is-8-desktop">
+                <article class="message is-success">
+                    <div class="message-header" id="lyricsCardHeader">
+                        <p>Song Lyrics</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body" id="lyricsCardBody">
+                    </div>
+                </article>
+            </div>
+
+            <div class="column">
+                <article class="message is-success">
+                    <div class="message-header" id="artistSearchResultsCardHeader">
+                        <p>Search Results for Songs by Artist</p>
+                        <button class="delete" aria-label="delete" id="artistClearButton"></button>
+                    </div>
+                    <div class="message-body" id="artistSearchResultsCardBody">
+
+                    </div>
+                </article>
+            </div>
         </div>
 
-        <div class="column">
-            <article class="message is-success">
-                <div class="message-header" id="artistSearchResultsCardHeader">
-                    <p>Search Results for Songs by Artist</p>
-                    <button class="delete" aria-label="delete" id="artistClearButton"></button>
-                </div>
-                <div class="message-body" id="artistSearchResultsCardBody">
-
-                </div>
-            </article>
-        </div>
-    </div>
-
-<script src="js/dashboard.js" charset="utf-8"></script>
+        <script src="js/dashboard.js" charset="utf-8"></script>

@@ -22,6 +22,7 @@ module.exports = function(app) {
 
   app.get("/dashboard", isAuthenticated, function(req, res) {
     // let userId = 1;
+    console.log(req.user.id);
     db.Playlist.findAll({
       where: {
         UserId: req.user.id
