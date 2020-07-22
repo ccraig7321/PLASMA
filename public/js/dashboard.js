@@ -222,7 +222,7 @@ const renderPlaylistSongs = (playlistId) => {
     });
 };
 // Call select playlist
-selectPlaylist(selectedPlaylistName, selectedPlaylistId);
+// selectPlaylist(selectedPlaylistName, selectedPlaylistId);
 
 // Event listener and function to add song
 $(document).on("click", ".addSongBtn", function() {
@@ -259,6 +259,7 @@ $(document).on("click", ".playlistSongItem", function() {
     console.log("CLICK");
     console.log(selectedSong);
     getLyrics(selectedSong);
+    getInfo();
 });
 
 let selectedSong = $("#playlistSongsList:first").text();
@@ -284,3 +285,40 @@ const getLyrics = (song) => {
   };
 
   getLyrics(selectedSong);
+
+
+  
+  const getInfo = function {
+    // console.log($(this).attr("data-artist"));
+    // console.log($(this).attr("data-title"));
+    var song = $(this).attr("data-title");
+    var artist = $(this).attr("data-artist");
+
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist,
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+        "x-rapidapi-key": "4ef378f2b4msh60a9ee1fe251fb6p1af379jsnf1eaa5842a8d"
+      }
+    }
+    
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      console.log(response.data);
+      for(var i = 0; i < response.data.length; i++) {
+        if (response.data[i].title === song) {
+          $("#artistCardBody").empty();
+          $("#artistCardBody").append(response.data[i].title);
+          $("#artistCardBody").append(response.data[i].artist.name)
+          
+          $("#artistCardBody").append(response.data[i].album.title)
+          $('#artistCardBody').append('<img id="theImg" src="' + response.data[i].album.cover_medium + '" />');
+        }
+      }
+    });
+  
+  }
+  
