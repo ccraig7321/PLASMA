@@ -11,6 +11,7 @@ module.exports = function(app) {
 
   app.get("/contact", function(req, res) {
     res.render("contact", {});
+  });
 
   app.get("/signup", function(req, res) {
     res.render("signup", {});
@@ -39,4 +40,5 @@ module.exports = function(app) {
   app.get("/logout", function(req, res) {
     res.render("/", {});
   });
-};
+}
+
