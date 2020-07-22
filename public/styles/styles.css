@@ -180,7 +180,7 @@ html, body {
 
 .menu-container {
     position: fixed;
-    bottom: 0;
+    top: 52px;
     margin: auto;
     min-width: 300px;
     z-index: 10;
