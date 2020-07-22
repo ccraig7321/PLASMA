@@ -9,6 +9,9 @@ module.exports = function(app) {
     res.render("login", {});
   });
 
+  app.get("/contact", function(req, res) {
+    res.render("contact", {});
+
   app.get("/signup", function(req, res) {
     res.render("signup", {});
   });

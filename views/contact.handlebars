@@ -1,0 +1,90 @@
+<!-- Navbar for Dashboard -->
+<nav class="navbar is-fixed-top box-shadow-y" id="dashboardNavbar">
+    <div class="navbar-brand">
+        <a href="#" class="navbar-burger toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+
+        <a href="/" class="navbar-item has-text-weight-bold has-text-black">PLASMA</a>
+        <a href="#" class="navbar-burger nav-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/" class="navbar-item" id="homeText">
+                {{!-- <i class="fa fa-music" id="homeDashboardIcon"></i> --}}
+                Home
+            </a>
+
+            <a href="#" class="navbar-item">Search</a>
+            <a href="#" class="navbar-item">Playlists</a>
+            <a href="#" class="navbar-item">Recommendations</a>
+        </div>
+
+        <div class="navbar-end">
+            <a href="#" class="navbar-item">Notifications</a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#" class="navbar-link">User</a>
+                <div class="navbar-dropdown is-right">
+                    <a href="#" class="navbar-item">Profile</a>
+                    <a href="#" class="navbar-item">Settings</a>
+                    <hr class="navbar-divider">
+                    <a href="/login" class="navbar-item">Login</a>
+                    <a href="/signup" class="navbar-item">Sign Up</a>
+                </div>
+            </div>
+
+        </div>
+</nav>
+
+
+<style> body {margin-top: -52px;}</style>
+<section class="hero is-success is-fullheight is-bold has-background" id="homepageHeroBackground">
+    <div class="hero-body" id="contactHero">
+        <img class="hero-background" src="styles/images/tropicalImage.jpg" alt="Tropical Leaf on Pastel Stationery" id="tropicalLeafStationery">
+        <div class="container">
+            <div class="row" >
+            {{!-- style="background-color: #FCBEBF" --}}
+                <div class="columns ">
+                    <div class="column"></div>
+                <div class="column is-7">
+                    <div class="panel panel-default">
+                        <h1 style="color: white"><strong>Contact Us</strong></h1>
+                        <hr>
+                        <form>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-primary is-rounded" type="text" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-primary is-rounded" type="text" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <textarea class="textarea is-primary" placeholder="Type Message Here"></textarea>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary" style="background-color: #FCB280" href="/login">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="column"></div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
+
+<script src="js/dashboard.js" charset="utf-8"></script>
