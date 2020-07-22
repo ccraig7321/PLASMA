@@ -42,5 +42,9 @@ module.exports = function(app) {
       res.render("dashboard", hbsObject);
     });
   });
+
+  app.get("*", function(req, res) {
+    res.render("404error");
+  });
 }
 
