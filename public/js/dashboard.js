@@ -284,10 +284,12 @@ $(document).on("click", ".addSongBtn", function () {
 // Event listener for song name
 $(document).on("click", ".playlistSongItem", function () {
   selectedSong = $(this).data("title") + $(this).data("artist");
+  var song = $(this).attr("data-title");
+  var artist = $(this).attr("data-artist");
   // console.log(selectedSong);
   songIsSelected = true;
   getLyrics(selectedSong);
-  getInfo();
+  getInfo(song, artist);
 });
 
 // Lyric API
@@ -310,11 +312,10 @@ const getLyrics = (song) => {
   });
 };
 getLyrics(selectedSong);
-const getInfo = function() {
+
+const getInfo = function(song, artist) {
   // console.log($(this).attr("data-artist"));
   // console.log($(this).attr("data-title"));
-  var song = $(this).attr("data-title");
-  var artist = $(this).attr("data-artist");
 
   var settings = {
     "async": true,
