@@ -311,11 +311,17 @@ const getLyrics = (song) => {
       for(var i = 0; i < response.data.length; i++) {
         if (response.data[i].title === song) {
           $("#artistCardBody").empty();
-          $("#artistCardBody").append(response.data[i].title);
-          $("#artistCardBody").append(response.data[i].artist.name)
-          
-          $("#artistCardBody").append(response.data[i].album.title)
           $('#artistCardBody').append('<img id="theImg" src="' + response.data[i].album.cover_medium + '" />');
+
+          let songTitle = $("<p>").text(response.data[i].title);
+          $("#artistCardBody").append(songTitle);
+
+          let songArtist = $("<p>").text(response.data[i].artist.name);
+          $("#artistCardBody").append(songArtist);
+
+          let songAlbum = $("<p>").text(response.data[i].album.title);
+          $("#artistCardBody").append(songAlbum);
+          
         }
       }
     });
