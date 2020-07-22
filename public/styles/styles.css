@@ -94,7 +94,7 @@ html, body {
     padding-left: 10px;
 }
 
-#homeDashboardIcon, #playlistsIcon, #thumbsUpIcon, #navbarSearchIcon, #bellIcon, #dashboardUserIcon {
+#plasmaIcon, #dashboardUserIcon {
     height: 30px;
     width: 30px;
     vertical-align: baseline;
