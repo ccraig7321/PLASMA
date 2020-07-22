@@ -20,15 +20,17 @@ html, body {
     font-family: "Questrial", sans-serif;
     font-weight: bold;
     background-color: #FCB280;
-    font-size: 20px;
+    font-size: 18px;
     color: darkslategray;
-    margin-left: 50px;
-    padding: 30px;
+    padding: 10px;
+    margin-top: 30px;
 }
 
 #newPlaylistName {
-    margin-left: 80px;
+    margin-left: 20px;
     width: 250px;
+    margin-bottom: 35px;
+    margin-top: 30px;
 }
 
 #loginLine {
@@ -195,30 +197,26 @@ html, body {
 }
 
 #userSongSearchQuery {
-    width: 200px;
+    width: 300px;
     margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 #userArtistSearchQuery {
-    width: 200px;
+    width: 300px;
     margin-top: 10px;
 }
 
-#playlistCardBody, #songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody  {
+#playlistCardBody, #songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody, #searchBarsCardBody  {
     background-color: #FCBEBF;
 }
 
-#playlistCardBody {
-    margin-left: 50px;
-}
-
-#songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody, #dashboardUserInfo {
+#songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody, #dashboardUserInfo, #playlistCardBody {
     color: darkslategray;
 }
 
-#playlistCardHeader, #lyricsCardHeader, #songCardHeader, #artistCardHeader, #songSearchResultsCardHeader, #artistSearchResultsCardHeader {
+#playlistCardHeader, #lyricsCardHeader, #songCardHeader, #artistCardHeader, #songSearchResultsCardHeader, #artistSearchResultsCardHeader, #searchBarsCardHeader {
     background-color: #B5EAD7;
     color: darkslategray;
 }

@@ -26,9 +26,9 @@ module.exports = function(app) {
             id: data.id,
             name: data.name,
             userId: data.UserId
-          }
+          };
         })
-      }
+      };
       res.render("dashboard", hbsObject);
     });
   });
@@ -37,8 +37,3 @@ module.exports = function(app) {
     res.render("/", {});
   });
 };
-
-
-
-
-
