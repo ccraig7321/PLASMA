@@ -1,21 +1,19 @@
+
+
 // Search function to find song by its title.
 $("#songSearchButton").on("click", function (event) {
     event.preventDefault();
     songClear();
     console.log("I was clicked!");
     searchTerm = $("#userSongSearchQuery").val();
-    const queryURL =
-        "https://deezerdevs-deezer.p.rapidapi.com/search/track?q=" + searchTerm;
+    const queryURL = "/api/songSearch/" + searchTerm;
 
     const settings = {
         async: true,
         crossDomain: true,
         url: queryURL,
         method: "GET",
-        headers: {
-            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-            "x-rapidapi-key": "bd30da6cc8msh4942a58cb2affc9p163855jsn1cfc123ae22b",
-        },
+      
     };
 
     $.ajax(settings).done(function (musicData) {
@@ -92,10 +90,8 @@ $("#artistSearchButton").on("click", function (event) {
     artistClear();
     console.log("I was clicked!");
     searchTerm = $("#userArtistSearchQuery").val();
-    const queryURL =
-        "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" +
-        searchTerm +
-        "&api_key=a2d086840baaf07f39dd4fcf09c18ff7&format=json";
+    const queryURL = "/api/artistSearch/" + searchTerm;
+        
 
     const settings = {
         url: queryURL,
@@ -315,26 +311,22 @@ $(document).on("click", ".playlistSongItem", function () {
 
 // Lyric API
 const getLyrics = (song) => {
-    $("#lyricsCardBody").empty();
-    if (song === "") {
-        let lyricP = $("<p>").text("Select a song to sing along!");
-        $("#lyricsCardBody").append(lyricP);
-    } else {
-        let queryURL = `https://canarado-lyrics.p.rapidapi.com/lyrics/${song}`;
-        $.ajax({
-            url: queryURL,
-            method: "GET",
-            headers: {
-                "x-rapidapi-host": "canarado-lyrics.p.rapidapi.com",
-                "x-rapidapi-key": "bf8ea15776msh45d77821114c6f4p14588ejsn90d20668317d"
-            }
-        }).then(function (lyricData) {
-            //   console.log(lyricData);
-            // Set them to lyric section on dashboard
-            let lyricP = $("<p>").text(lyricData.content[0].lyrics);
-            $("#lyricsCardBody").append(lyricP);
-        });
-    }
+  $("#lyricsCardBody").empty();
+  if (song === "") {
+      let lyricP = $("<p>").text("Select a song to sing along!");
+      $("#lyricsCardBody").append(lyricP);
+  } else {
+      let queryURL = `/api/lyricSearch/${song}`;
+      $.ajax({
+          url: queryURL,
+          method: "GET"
+      }).then(function (lyricData) {
+          //   console.log(lyricData);
+          // Set them to lyric section on dashboard
+          let lyricP = $("<p>").text(lyricData.content[0].lyrics);
+          $("#lyricsCardBody").append(lyricP);
+      });
+  }
 };
 
 function lyricsClear() {
@@ -344,23 +336,19 @@ function lyricsClear() {
 // The on "click" function that is associated with the "delete" button.
 $("#lyricsClear").on("click", lyricsClear);
 
-const getInfo = function (song, artist) {
+const getInfo = function (song, searchTerm) {
     // console.log($(this).attr("data-artist"));
     // console.log($(this).attr("data-title"));
-
+    const queryURL = "/api/artistInfo/" + searchTerm;
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-            "x-rapidapi-key": "4ef378f2b4msh60a9ee1fe251fb6p1af379jsnf1eaa5842a8d"
-        }
+        "url": queryURL,
+        "method": "GET"
     }
     $.ajax(settings).done(function (response) {
-        console.log(response);
-        console.log(response.data);
+        // console.log(response);
+        // console.log(response.data);
         for (var i = 0; i < response.data.length; i++) {
             if (response.data[i].title === song) {
                 $("#artistCardBody").empty();

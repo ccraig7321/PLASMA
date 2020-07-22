@@ -3,6 +3,7 @@ var db = require("../models");
 var passport = require("../config/passport");
 const { QueryTypes } = require("sequelize");
 var passport = require("../config/passport");
+var axios = require("axios");
 
 module.exports = function(app) {
   // TODO? // Passport authentication middleware and login POST route
@@ -102,5 +103,70 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/songSearch/:searchTerm", function(req, res) {
+    const queryURL =
+        "https://deezerdevs-deezer.p.rapidapi.com/search/track?q=" + req.params.searchTerm;
+
+    const settings = {
+        async: true,
+        crossDomain: true,
+        url: queryURL,
+        method: "GET",
+        headers: {
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-key": process.env.songSearchPass
+        },
+    };
+
+    axios(settings).then(function (response) {
+      console.log(response.data);
+      res.send(response.data);
+      });
+    })
+
+    // Third Party Lyric Search
+  app.get("/api/lyricSearch/:searchTerm", function(req, res) {
+    const queryURL = "https://canarado-lyrics.p.rapidapi.com/lyrics/" + req.params.searchTerm;
+    axios({
+      url: queryURL,
+      method: "GET",
+      headers: {
+          "x-rapidapi-host": "canarado-lyrics.p.rapidapi.com",
+          "x-rapidapi-key": process.env.getLyricsPass
+      }
+    }).then(function(response) {
+      // console.log(response.data);
+      res.send(response.data);
+    });
+  });
+
+  app.get("/api/artistInfo/:searchTerm", function(req, res) {
+    const queryURL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + req.params.searchTerm;
+    axios({
+      url: queryURL,
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+        "x-rapidapi-key": process.env.artistInfoPass
+      },
+    }).then(function(response) {
+      // console.log(response.data);
+      res.send(response.data);
+    })
+  })
+
+  app.get("/api/artistSearch/:searchTerm", function(req, res) {
+    const queryURL =
+      "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + req.params.searchTerm + "&api_key=" + process.env.artistSearchPass + "&format=json";
+      axios({
+        url: queryURL,
+        method: "GET"
+      }).then( function(response) {
+        console.log(response.data);
+        res.send(response.data);
+      })
+
+
+  })
   // DELETE route to delete playlistSong
 };
