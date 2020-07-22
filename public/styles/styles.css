@@ -22,8 +22,13 @@ html, body {
     background-color: #FCB280;
     font-size: 20px;
     color: white;
-    margin-left: 175px;
+    margin-left: 50px;
     padding: 30px;
+}
+
+#newPlaylistName {
+    margin-left: 80px;
+    width: 250px;
 }
 
 #loginLine {
@@ -84,12 +89,12 @@ html, body {
     color: #C7CEEA;
 }
 
-#userIcon, #loginIcon, #plusIcon {
+#userIcon, #loginIcon, #plusIcon, #searchIcon {
     padding-right: 10px;
     padding-left: 10px;
 }
 
-#homeDashboardIcon {
+#homeDashboardIcon, #playlistsIcon, #thumbsUpIcon, #navbarSearchIcon, #bellIcon, #dashboardUserIcon {
     height: 30px;
     width: 30px;
     vertical-align: baseline;
@@ -190,14 +195,14 @@ html, body {
 }
 
 #userSongSearchQuery {
-    width: 300px;
+    width: 200px;
     margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 #userArtistSearchQuery {
-    width: 300px;
+    width: 200px;
     margin-top: 10px;
 }
 
