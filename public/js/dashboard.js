@@ -330,6 +330,13 @@ const getLyrics = (song) => {
 };
 getLyrics(selectedSong);
 
+function lyricsClear() {
+  $("#lyricsCardBody").empty();
+}
+
+// The on "click" function that is associated with the "delete" button.
+$("#lyricsClear").on("click", lyricsClear);
+
 const getInfo = function(song, artist) {
   // console.log($(this).attr("data-artist"));
   // console.log($(this).attr("data-title"));
@@ -365,6 +372,13 @@ const getInfo = function(song, artist) {
     }
   });
 };
+
+function artistInfoClear() {
+  $("#artistCardBody").empty();
+}
+
+// The on "click" function that is associated with the "delete" button.
+$("#artistInfoClear").on("click", artistInfoClear);
 
 // Call select playlist
 selectPlaylist(selectedPlaylistName, selectedPlaylistId);
