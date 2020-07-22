@@ -8,7 +8,8 @@ $(document).ready(() => {
       event.preventDefault()
       $.post("/api/signup", {
         username: usernameInput.val(),
-        password: passwordInput.val()
+        password: passwordInput.val(),
+        name: $("#name").val()
       }).then(function(){
         location.href = "/login"
       })
