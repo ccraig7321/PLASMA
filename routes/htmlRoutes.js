@@ -1,4 +1,7 @@
 var db = require("../models");
+var passport = require("../config/passport");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
@@ -17,11 +20,11 @@ module.exports = function(app) {
     res.render("signup", {});
   });
 
-  app.get("/dashboard", function(req, res) {
-    let userId = 1;
+  app.get("/dashboard", isAuthenticated, function(req, res) {
+    // let userId = 1;
     db.Playlist.findAll({
       where: {
-        UserId: userId
+        UserId: req.user.id
       }
     }).then(function(playlistsData) {
       let hbsObject = {
@@ -31,14 +34,12 @@ module.exports = function(app) {
             name: data.name,
             userId: data.UserId
           };
-        })
+        }),
+        nameOfUser: req.user.name,
+        idOfUser: req.user.id
       };
       res.render("dashboard", hbsObject);
     });
-  });
-
-  app.get("/logout", function(req, res) {
-    res.render("/", {});
   });
 }
 
