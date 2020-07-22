@@ -11,8 +11,15 @@ ___
 
 ## How it Works
 
-In order for this application to work the user will need to use the terminal to run the program.  This application requires the installation of various dependencies including express, express-handlebars, mysql, and sequelize. These packages assist in handling the dashboard portion of this application.  Additional dependecies including bycrypt, passport, express-session, passort-local, and dotenv are what allow for privacy and authentication throughout the application.
+In order for this application to work the user will need to use the terminal to run the program.  This application requires the installation of various dependencies including express, express-handlebars, mysql, and sequelize. These packages assist in handling the dashboard portion of this application.  Additional dependecies including bycrypt, passport, express-session, passort-local, and dotenv are what allow for privacy and authentication throughout the application. When the user runs "node server", there will be a listening PORT assigned to the application. For this case, PLASMA is on local host 3000.
+
 <br><br>
+
+![LOCALHOST IN BROWSER](public/styles/images/localHost.png)
+
+<br><br>
+
+In order for the user to being the process of accessing the application, the user will need to click on the "Access Your Playlist" button 
 
 ![HOMEPAGE](public/styles/images/homepage.png)
 
