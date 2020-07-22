@@ -2,7 +2,7 @@
 
 html, body {
     font-family: "Questrial", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
 }
 
@@ -20,15 +20,17 @@ html, body {
     font-family: "Questrial", sans-serif;
     font-weight: bold;
     background-color: #FCB280;
-    font-size: 20px;
-    color: white;
-    margin-left: 50px;
-    padding: 30px;
+    font-size: 18px;
+    color: darkslategray;
+    padding: 10px;
+    margin-top: 30px;
 }
 
 #newPlaylistName {
-    margin-left: 80px;
+    margin-left: 20px;
     width: 250px;
+    margin-bottom: 35px;
+    margin-top: 30px;
 }
 
 #loginLine {
@@ -57,6 +59,8 @@ html, body {
 #errorText {
     position: fixed;
     z-index: 1;
+    margin-top: 200px;
+    margin-left: 100px;
 }
 
 #avatar img {
@@ -94,7 +98,7 @@ html, body {
     padding-left: 10px;
 }
 
-#homeDashboardIcon, #playlistsIcon, #thumbsUpIcon, #navbarSearchIcon, #bellIcon, #dashboardUserIcon {
+#plasmaIcon, #dashboardUserIcon {
     height: 30px;
     width: 30px;
     vertical-align: baseline;
@@ -135,16 +139,16 @@ html, body {
 }
 
 #errorTitle {
-    font-size: 60px;
-    color: black;
+    font-size: 80px;
+    color: white;
     font-weight: bold;
     text-align: left;
     padding-left: 20px;
 }
 
 #errorSubtitle {
-    font-size: 25px;
-    color: black;
+    font-size: 45px;
+    color: white;
     text-align: left;
     padding-left: 20px;
 }
@@ -195,31 +199,28 @@ html, body {
 }
 
 #userSongSearchQuery {
-    width: 200px;
+    width: 300px;
     margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 #userArtistSearchQuery {
-    width: 200px;
+    width: 300px;
     margin-top: 10px;
 }
 
-#playlistCardBody, #songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody  {
+#playlistCardBody, #songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody, #searchBarsCardBody  {
     background-color: #FCBEBF;
 }
 
-#playlistCardBody {
-    margin-left: 50px;
+#songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody, #dashboardUserInfo, #playlistCardBody {
+    color: darkslategray;
 }
 
-#songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody {
-    color: white;
-}
-
-#playlistCardHeader, #lyricsCardHeader, #songCardHeader, #artistCardHeader, #songSearchResultsCardHeader, #artistSearchResultsCardHeader {
+#playlistCardHeader, #lyricsCardHeader, #songCardHeader, #artistCardHeader, #songSearchResultsCardHeader, #artistSearchResultsCardHeader, #searchBarsCardHeader {
     background-color: #B5EAD7;
+    color: darkslategray;
 }
 
 input::placeholder {
@@ -231,7 +232,7 @@ input::placeholder {
     background-color: #FEF1E8;
 }
 
-a{
+a {
     color: white;
     cursor: pointer;
     text-decoration: none;
