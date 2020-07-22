@@ -19,9 +19,9 @@ In order for this application to work the user will need to use the terminal to 
 
 <br><br>
 
-In order for the user to being the process of accessing the application, the user will need to click on the "Access Your Playlist" button 
+In order for the user to being the process of accessing the application, the user will need to click on the "Access Your Playlist" button. By doing this, an api call will and render the login screen.
 
-![HOMEPAGE](public/styles/images/homepage.png)
+![HOMEPAGE](public/styles/images/loginpage.png)
 
 <br><br>
 
