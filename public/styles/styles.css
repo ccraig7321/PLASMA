@@ -2,7 +2,7 @@
 
 html, body {
     font-family: "Questrial", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
 }
 
@@ -21,7 +21,7 @@ html, body {
     font-weight: bold;
     background-color: #FCB280;
     font-size: 20px;
-    color: white;
+    color: darkslategray;
     margin-left: 50px;
     padding: 30px;
 }
@@ -136,7 +136,7 @@ html, body {
 
 #errorTitle {
     font-size: 60px;
-    color: black;
+    color: white;
     font-weight: bold;
     text-align: left;
     padding-left: 20px;
@@ -144,7 +144,7 @@ html, body {
 
 #errorSubtitle {
     font-size: 25px;
-    color: black;
+    color: white;
     text-align: left;
     padding-left: 20px;
 }
@@ -214,12 +214,13 @@ html, body {
     margin-left: 50px;
 }
 
-#songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody {
-    color: white;
+#songCardBody, #lyricsCardBody, #artistCardBody, #songSearchResultsCardBody, #artistSearchResultsCardBody, #dashboardUserInfo {
+    color: darkslategray;
 }
 
 #playlistCardHeader, #lyricsCardHeader, #songCardHeader, #artistCardHeader, #songSearchResultsCardHeader, #artistSearchResultsCardHeader {
     background-color: #B5EAD7;
+    color: darkslategray;
 }
 
 input::placeholder {
@@ -231,7 +232,7 @@ input::placeholder {
     background-color: #FEF1E8;
 }
 
-a{
+a {
     color: white;
     cursor: pointer;
     text-decoration: none;
