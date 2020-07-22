@@ -181,8 +181,7 @@ $("#makePlaylistButton").on("click", function () {
   console.log("click!");
   if ($("#newPlaylistName").val() != "") {
     let playlistName = {
-      name: $("#newPlaylistName").val(),
-      UserId: 1
+      name: $("#newPlaylistName").val()
     }
     $.ajax("/api/playlists", {
       type: "POST",
@@ -195,7 +194,7 @@ $("#makePlaylistButton").on("click", function () {
 });
 
 // Event listener for playlist list item
-$(".playlistListItem").on("click", function () {
+$(document).on("click", ".playlistListItem", function () {
   songIsSelected = false;
   let playlistName = $(this).text();
   let playlistId = $(this).data("id");
@@ -215,6 +214,24 @@ const selectPlaylist = (name, id) => {
     renderPlaylistSongs(id);
   }
 };
+
+// Function to show other users playlists
+const getOtherPlaylists = () => {
+
+    $.ajax("/api/playlists/otherusers", {
+        type: "GET"
+    }).then(function (data) {
+        console.log("all user playlists");
+        console.log(data);
+        for (let i = 0; i < 5; i++) {
+            let newItem = $("<li>").text(data[i].name);
+            newItem.attr({"data-id": data[i].id});
+            newItem.addClass("playlistListItem");
+            $("#otherPlaylistsList").append(newItem);
+        }
+    });
+}
+getOtherPlaylists();
 
 // Function to show playlist songs
 const renderPlaylistSongs = (playlistId) => {

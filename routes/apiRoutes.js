@@ -52,6 +52,16 @@ module.exports = function(app) {
     });
   });
 
+  // GET route for playlists from all users except the one logged in
+  app.get("/api/playlists/otherusers", function(req, res) {
+    db.sequelize.query("SELECT * FROM Playlists WHERE UserId != ?", {
+      replacements: [req.user.id],
+      type: QueryTypes.SELECT
+    }).then(function(playlists) {
+      res.json(playlists);
+    });
+  });
+
   // GET route for all songs from specific playlist
   app.get("/api/playlist/:id", function(req, res) {
     db.sequelize.query("SELECT * FROM Songs JOIN PlaylistSongs ON Songs.id = PlaylistSongs.SongId WHERE PlaylistSongs.PlaylistId = ?", {
@@ -65,7 +75,10 @@ module.exports = function(app) {
 
   // POST route for create new playlist
   app.post("/api/playlists", function(req, res) {
-    db.Playlist.create(req.body).then(function(playlist) {
+    db.Playlist.create({
+      name: req.body.name,
+      UserId: req.user.id
+    }).then(function(playlist) {
       res.json(playlist);
     });
   });
