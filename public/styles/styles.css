@@ -261,3 +261,8 @@ a {
 #contactHero.hero-body {
     background-color: #FCBEBF;
 }
+
+.playlistSongItem:hover, .playlistListItem:hover {
+    cursor: pointer;
+    color: #235656;
+}
