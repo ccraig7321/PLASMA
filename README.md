@@ -22,7 +22,7 @@ In order for the user to being the process of accessing the application, the use
 
 <br><br>
 
-<img src="public/styles/images/loginPage.png" width="280">
+<img src="public/styles/images/login.png" width="280">
 
 <br><br>
 
@@ -97,9 +97,9 @@ ___
 
 ### Links for Heroku Deployment and GitHub Deployment
 <br>
-Heroku:  https://plasma-playlistdashboard.herokuapp.com/
+Heroku: https://plasma-playlistdashboard.herokuapp.com/
 <br><br>
-GitHub:  
+GitHub: 
 <br><br>
 Portfolio Link: 
 
