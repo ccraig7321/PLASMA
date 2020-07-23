@@ -22,7 +22,6 @@ In order for the user to being the process of accessing the application, the use
 <br><br>
 
 <img src="public/styles/images/loginPage.png" width="280">
-<!-- ![LOGIN](public/styles/images/loginPage.png) -->
 
 <br><br>
 
@@ -52,7 +51,7 @@ Upon enetering the dashboard, the user will be greeted with a header that includ
 
 <br><br>
 
-![IMAGE OF NEW PLAYLIST]
+<img src="public/styles/images/playlist.png" width="280">
 
 <br><br>
 
@@ -60,15 +59,11 @@ Additionally, the user will also be able to search for by title as well as artis
 
 <br><br>
 
-![IMAGE OF ACTIVE DASHBOARD]
+<img src="public/styles/images/dashboard.png" width="480">
 
 <br><br>
 
 One final feature of this application is the ability to view playlists from other members of the PLASMA community. When users are signed into the personalized dashboard, there will be a display of the active playlist throughout the community appended on screen under the user created playlists.
-
-<br><br>
-
-![IMAGE OF SUGGESTED PLAYLIST]
 
 <br><br>
 ___
