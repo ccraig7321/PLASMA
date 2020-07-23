@@ -1,21 +1,11 @@
-# P.L.A.S.M.A.
+# <strong>P.L.A.S.M.A.</strong>
 
-### Playlist Lyrics And Songs Made Accessible
+### <strong>P</strong>laylist <strong>L</strong>yrics <strong>A</strong>nd <strong>S</strong>ongs <strong>M</strong>ade <strong>A</strong>ccessible
 ___
 
 ## Description
 
 With this application users will be able to use the secure sign up for to become a member of a community centered around creating personalized playlists.  Users will be able to select songs and artists that will create a playlist that suites the users needs. While aspects of the application are individualize per user, the user will also be able to explore new music suggestions based off playists from other users in the community.
-
-___
-
-## Table of Contents
-
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Test](#test)
-    * [Questions](#questions)
 
 ___
 
@@ -85,11 +75,31 @@ ___
 
 ## Technologies Used
 
-- 
+- BULMA
+- jQuery & Javascript
+- Handlebars
+- NodeJS
+- Express
+- Passport, Session, Bycrypt
+- Deezer, Canarado, LastFM APIs
+- Sequelize
+- MySQL
 
 ___
 
-### Links for Heroku Deployment and GitHubDeployment
+## Contributors
+
+Ben Acker: https://github.com/bendrakeacker
+
+Chelsey Craig: https://github.com/ccraig7321
+
+Romie Hecdivert: https://github.com/rh9891
+
+Susan Holland: https://github.com/SEGH
+
+___
+
+### Links for Heroku Deployment and GitHub Deployment
 <br>
 Heroku:  https://plasma-playlistdashboard.herokuapp.com/
 <br><br>
