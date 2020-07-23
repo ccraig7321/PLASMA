@@ -53,8 +53,7 @@ Upon enetering the dashboard, the user will be greeted with a header that includ
 <br><br>
 
 <img src="public/styles/images/playlist.png" width="280">
-
-<br><br>
+<br>
 
 Additionally, the user will also be able to search for by title as well as artist and add those songs to his/her selected playlist.  When information is placed into the Song Search Bar table on the top right portion of the dashboard. API calls will be made to Deezer and Canarado in order to retreive the Artist/Album information as well as a list of songs will associated with the user's search. The user will then be able to select which song he/she would like to add to the selected playlist. By making this selection, an API call will be made to Last FM and provide the album cover art for the selected songs along with the lyrics.
 
@@ -98,11 +97,12 @@ ___
 ### Links for Heroku Deployment and GitHub Deployment
 <br>
 Heroku: https://plasma-playlistdashboard.herokuapp.com/
-<br><br>
-GitHub: 
+<!-- https://plasma-playlist.herokuapp.com/login -->
+
+GitHub: https://ccraig7321.github.io/PLASMA/
 <br><br>
 Portfolio Link: 
-
+<!-- https://ccraig7321.github.io/Responsive-Portfolio/ -->
 ___
 
 ### License
