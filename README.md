@@ -9,6 +9,16 @@ With this application users will be able to use the secure sign up for to become
 
 ___
 
+## Table of Contents
+
+    * [Usage](#usage)
+    * [License](#license)
+    * [Contributing](#contributing)
+    * [Test](#test)
+    * [Questions](#questions)
+
+___
+
 ## How it Works
 
 In order for this application to work the user will need to use the terminal to run the program.  This application requires the installation of various dependencies including express, express-handlebars, mysql, and sequelize. These packages assist in handling the dashboard portion of this application.  Additional dependecies including bycrypt, passport, express-session, passort-local, and dotenv are what allow for privacy and authentication throughout the application. When the user runs "node server", there will be a listening PORT assigned to the application. For this case, PLASMA is on local host 3000. The homepage can be viewed by opening the brower to "localhost:3000" or opening the deployed Heroku link.
@@ -48,31 +58,46 @@ The final option the user will be able to select is the "Sign Up" button.  This 
 
 <br><br>
 
-Upon enetering the dashboard, the user will be greeted with a header that includes the specfic name he/she 
+Upon enetering the dashboard, the user will be greeted with a header that includes the specfic name he/she provided during the signup process. The appearance of the dashboard contains a number of features that the user will be able to enjoy as a member.  In order to create a new playlist, the user will need type in a title for the playlist and then select the "New Playlist" button. Doing this will store that information in the MySql database under the unique id that was assigned to that particular user.  This then will appear on the left side of the screen under the "My Playlist" section of the dashboard.
 
 <br><br>
 
-![PICTURE DEVOURED BURGERS](public/assets/img/devouredBurgers.png)
+![IMAGE OF NEW PLAYLIST]
 
 <br><br>
 
-If the user wants to view the totality of the information within the application, he/she can got to localhost:8080/api/allburgers to view the details of each added burger by I.D.
+Additionally, the user will also be able to search for by title as well as artist and add those songs to his/her selected playlist.  When information is placed into the Song Search Bar table on the top right portion of the dashboard. API calls will be made to Deezer and Canarado in order to retreive the Artist/Album information as well as a list of songs will associated with the user's search. The user will then be able to select which song he/she would like to add to the selected playlist. By making this selection, an API call will be made to Last FM and provide the album cover art for the selected songs along with the lyrics.
 
 <br><br>
 
-![PICTURE OF BURGER ARRAY](public/assets/img/burgerArray.png)
+![IMAGE OF ACTIVE DASHBOARD]
+
+<br><br>
+
+One final feature of this application is the ability to view playlists from other members of the PLASMA community. When users are signed into the personalized dashboard, there will be a display of the active playlist throughout the community appended on screen under the user created playlists.
+
+<br><br>
+
+![IMAGE OF SUGGESTED PLAYLIST]
 
 <br><br>
 ___
 
+## Technologies Used
+
+- 
+
+___
+
 ### Links for Heroku Deployment and GitHubDeployment
 <br>
-Heroku: https://node-burgers.herokuapp.com/
+Heroku:  https://plasma-playlistdashboard.herokuapp.com/
 <br><br>
-GitHub:  https://ccraig7321.github.io/Node-Express-Handlebars/
+GitHub:  
 <br><br>
 Portfolio Link: https://ccraig7321.github.io/Responsive-Portfolio/
 
+___
 
 ### License
 
