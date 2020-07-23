@@ -15,6 +15,7 @@ In order for this application to work the user will need to use the terminal to 
 <br><br>
 
 <img src="public/styles/images/homepage.png" width="680">
+
 <br><br>
 
 In order for the user to being the process of accessing the application, the user will need to click on the "Access Your Playlist" button. By doing this, an api call will be made and render the login screen. The login screen gives the user a multitude of of options to chose from. The most obvious is the option for the user to enter a username and password and select the "Login" button.  Entering in the username and password generates a session through the passport npm package.  The session is what links to the database in MySql and allows access to the rest of the application.
@@ -100,7 +101,7 @@ Heroku:  https://plasma-playlistdashboard.herokuapp.com/
 <br><br>
 GitHub:  
 <br><br>
-Portfolio Link: https://ccraig7321.github.io/Responsive-Portfolio/
+Portfolio Link: 
 
 ___
 
